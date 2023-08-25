@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(routes);
 
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+    res.send("Aew Galerinha que assiste meu Canal");
+});
 
 export default app;
