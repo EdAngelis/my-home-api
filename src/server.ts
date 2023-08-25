@@ -21,9 +21,9 @@ mainDuties();
 
 connect();
 
-const port = process.env.PORT || 3000;
+const port = 5853;
 
-app.listen(5853, () => {
+app.listen(port, () => {
   console.log(`Server running on port ${chalkSuccess(port)}`);
 });
 
