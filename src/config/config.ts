@@ -13,7 +13,7 @@ const config = {
       "mongodb+srv://ed4ngelis:ruZLG0lCffpmze9A@cluster0.l90zluj.mongodb.net/my-home?retryWrites=true&w=majority",
   },
   production: {
-    db_uri: process.env.DB_URI,
+    db_uri: "mongodb+srv://ed4ngelis:ruZLG0lCffpmze9A@cluster0.l90zluj.mongodb.net/my-home?retryWrites=true&w=majority",
   },
 };
 
