@@ -1,0 +1,8 @@
+{
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "dart.devToolsTheme": "dark",
+  "typescript.inlayHints.enumMemberValues.enabled": false
+}
