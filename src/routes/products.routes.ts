@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get("/", getProducts);
 router.get("/create-many", createProducts);
-router.post("/create", createProduct);
+router.post("/", createProduct);
 router.get("/:id", getProduct);
 router.patch("/:id", updateProduct);
 router.patch("/", updateProducts);
