@@ -16,7 +16,7 @@ interface IProducts extends Document {
 }
 
 const schema = new Schema({
-  cod: { type: String, required: true, unique: true },
+  cod: { type: String },
   name: { type: String, required: true },
   unit: { type: String, required: true },
   badge: { type: String },
@@ -25,7 +25,7 @@ const schema = new Schema({
   characteristic: { type: String },
   description: { type: String },
   image: { type: String },
-  category: { type: String, required: true },
+  category: { type: String },
 });
 
 const Product = model<IProducts>("Products", schema);
