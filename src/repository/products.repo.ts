@@ -22,18 +22,8 @@ const findOne = async (_id: string) => {
 
 const create = async (product: IProducts) => {
   try {
-    const newProduct = await Product.create({
-      cod: "66",
-      name: "Contonete",
-      price: 5.0,
-      unit: "Caixa",
-      size: "",
-      badge: "",
-      characteristic: "",
-      category: "Higiene",
-      description: "",
-      image: "",
-    });
+    console.log(product);
+    const newProduct = await Product.create(product);
     return newProduct;
   } catch (error) {
     throw error;
