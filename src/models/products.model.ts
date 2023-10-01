@@ -18,7 +18,7 @@ interface IProducts extends Document {
 const schema = new Schema({
   cod: { type: String },
   name: { type: String, required: true },
-  unit: { type: String, required: true },
+  unit: { type: String, required: true, enum: ["kg", "un"] },
   badge: { type: String },
   size: { type: String },
   price: { type: Number, required: true },
