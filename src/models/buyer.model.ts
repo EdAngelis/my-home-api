@@ -21,6 +21,7 @@ type Cart = {
 
 interface IBuyer extends Document {
   name: string;
+  pin: string;
   email: string;
   password?: string;
   personalInfo?: PersonalInfo;
@@ -28,6 +29,7 @@ interface IBuyer extends Document {
 }
 
 const schema = new Schema({
+  pin: { type: String, required: true },
   name: { type: String, },
   email: { type: String,  unique: true },
   password: { type: String },
