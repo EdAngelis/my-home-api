@@ -15,7 +15,7 @@ const router = Router();
 router.get("/", getBuyers);
 router.get("/create-many", createBuyers);
 router.post("/create", createBuyer);
-router.get("/:id", getBuyer);
+router.get("/:pin", getBuyer);
 router.patch("/:id", updateBuyer);
 router.patch("/", updateBuyers);
 router.delete("/:id", deleteBuyer);
