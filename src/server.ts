@@ -2,22 +2,10 @@ import { chalkError, chalkSuccess, chalkWarning } from "./tools/chalk";
 import connect from "./db";
 import logger from "./tools/winston";
 import products from "./models/products";
-import shoppingCart from "./models/cart.model";
 import { total, printProducts, generateShopMessage } from "./controller/repo";
 import { printDutiesNames } from "./controller/dutiess.controller";
 
 import app from "./app";
-
-const mainMarket = () => {
-  printProducts(products);
-  generateShopMessage(shoppingCart, products);
-  total(shoppingCart, products);
-};
-
-const mainDuties = () => {};
-
-// mainMarket();
-mainDuties();
 
 connect();
 
