@@ -9,7 +9,21 @@ import {
   updateMany,
   deleteOne,
   deleteMany,
+  getByCpf,
 } from "../repository/buyers.repo";
+
+const  signIn = async ( req: Request, res: Response) => {
+   const { cpf } = req.query;
+   try {
+      const data = await getByCpf(cpf as string);
+      if(!data) return response(res, 201, { message: "Buyer not found", data: data });
+
+      return response(res, 200, { message: "Buyer found", data: data });
+   } catch (error) {
+      console.log(error);
+      return response(res, 500, { message: "Error", data: error });
+   }
+}
 
 const getBuyers = async (req: Request, res: Response) => {
   const query = req.query;
@@ -38,7 +52,7 @@ const getBuyer = async (req: Request, res: Response) => {
   }
 };
 
-const createBuyer = async (req: Request, res: Response) => {
+const signUp = async (req: Request, res: Response) => {
   try {
     const data = await create(req.body);
 
@@ -127,10 +141,11 @@ const deleteBuyers = async (req: Request, res: Response) => {
 export {
   getBuyers,
   createBuyers,
-  createBuyer,
+  signUp,
   getBuyer,
   updateBuyer,
   updateBuyers,
   deleteBuyer,
   deleteBuyers,
+  signIn
 };

@@ -11,7 +11,6 @@ import {
   deleteMany,
 } from "../repository/duties.repo";
 
-import dudiesInitialData from "../models/dutiess.model";
 import { DutiesType } from "../types";
 
 const getDuties = async (req: Request, res: Response) => {
@@ -46,24 +45,6 @@ const createDuty = async (req: Request, res: Response) => {
     const data = await create(req.body);
 
     return response(res, 200, { message: "Duty created", data });
-  } catch (error) {
-    console.log(error);
-    return response(res, 500, { message: "Error", data: error });
-  }
-};
-
-const createDuties = async (req: Request, res: Response) => {
-  const duties = dudiesInitialData;
-  try {
-    const data = await createMany(dudiesInitialData);
-
-    if (!data)
-      return response(res, 500, {
-        message: "Problem creating the duties",
-        data,
-      });
-
-    return response(res, 200, { message: "Duties created", data });
   } catch (error) {
     console.log(error);
     return response(res, 500, { message: "Error", data: error });
@@ -128,7 +109,6 @@ const deleteDuties = async (req: Request, res: Response) => {
 
 export {
   getDuties,
-  createDuties,
   createDuty,
   getDuty,
   updateDuty,
