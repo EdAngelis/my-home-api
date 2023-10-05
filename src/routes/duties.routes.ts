@@ -1,7 +1,6 @@
 import express from "express";
 import {
   getDuties,
-  createDuties,
   createDuty,
   getDuty,
   updateDuty,
@@ -13,7 +12,6 @@ import {
 const router = express.Router();
 
 router.get("/", getDuties);
-router.get("/create-many", createDuties);
 router.post("/create", createDuty);
 router.get("/:id", getDuty);
 router.patch("/:id", updateDuty);
