@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { response } from "../types/response-body.type";
 import {
   findMany,
-  createMany,
   create,
   findOne,
   updateOne,
@@ -10,8 +9,6 @@ import {
   deleteOne,
   deleteMany,
 } from "../repository/duties.repo";
-
-import { DutiesType } from "../types";
 
 const getDuties = async (req: Request, res: Response) => {
   const query = req.query;

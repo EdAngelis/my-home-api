@@ -1,9 +1,6 @@
-import { chalkError, chalkSuccess, chalkWarning } from "./tools/chalk";
+import { chalkError, chalkSuccess } from "./tools/chalk";
 import connect from "./db";
 import logger from "./tools/winston";
-import products from "./models/products";
-import { total, printProducts, generateShopMessage } from "./controller/repo";
-import { printDutiesNames } from "./controller/dutiess.controller";
 
 import app from "./app";
 
