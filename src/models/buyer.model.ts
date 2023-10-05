@@ -20,18 +20,18 @@ type Cart = {
 };
 
 interface IBuyer extends Document {
-  name: string;
-  pin: string;
-  email: string;
+  cpf: string;
+  name?: string;
+  email?: string;
   password?: string;
   personalInfo?: PersonalInfo;
   cart?: Cart;
 }
 
 const schema = new Schema({
-  pin: { type: String, required: true },
-  name: { type: String, },
-  email: { type: String,  unique: true },
+  cpf: { type: String, required: true, unique: true },
+  name: { type: String },
+  email: { type: String },
   password: { type: String },
   personalInfo: {
     phone: { type: String },
@@ -47,10 +47,8 @@ const schema = new Schema({
         product: {
           type: Schema.Types.ObjectId,
           ref: "Products",
-          required: true,
-          unique: true,
         },
-        qt: { type: Number, required: true },
+        qt: { type: Number },
       },
     ],
   },

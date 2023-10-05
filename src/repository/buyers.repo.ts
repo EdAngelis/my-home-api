@@ -1,6 +1,15 @@
 import { Buyer } from "../models";
 import { IBuyer } from "../models/buyer.model";
 
+const getByCpf = async (cpf: string) => {
+  try {
+    const buyer = await Buyer.findOne({ cpf }).populate("cart.items.product");
+    return buyer;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const findMany = async (query: any) => {
   try {
     const buyers = await Buyer.find(query).populate("cart.items.product");
@@ -84,4 +93,5 @@ export {
   updateMany,
   deleteOne,
   deleteMany,
+  getByCpf
 };
