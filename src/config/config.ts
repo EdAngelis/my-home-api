@@ -10,10 +10,10 @@ type Config = {
 const config = {
   development: {
     db_uri:
-      "mongodb+srv://ed4ngelis:ruZLG0lCffpmze9A@cluster0.l90zluj.mongodb.net/my-home?retryWrites=true&w=majority",
+      "mongodb://localhost:27017/",
   },
   production: {
-    db_uri: "mongodb+srv://ed4ngelis:ruZLG0lCffpmze9A@cluster0.l90zluj.mongodb.net/my-home?retryWrites=true&w=majority",
+    db_uri: process.env.DB_URI as string,
   },
 };
 
